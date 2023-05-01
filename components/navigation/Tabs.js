@@ -1,9 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import ChatScreen from '../screens/ChatScreen';
+import ListScreen from '../screens/ListScreen';
 import PostScreen from '../screens/PostScreen';
 import FindScreen from '../screens/FindScreen';
 import SettingScreen from '../screens/SettingScreen';
+import LoginScreen from '../screens/LoginScreen';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import CustomButton from '../modules/CustomButton';
@@ -51,20 +52,20 @@ const Tabs = () => {
   return (
     <Tab.Navigator
       tabBarLabelStyle={{display: 'none'}}
-      initialRouteName="Home"
+      initialRouteName="Find"
       screenOptions={{
         showLabel: false,
         tabBarActiveTintColor: '#e91e63',
         tabBarStyle: {
           position: 'absolute',
           bottom: 10,
-          left: 20,
-          right: 20,
+          left: 10,
+          right: 10,
           elevation: 0,
           color: '#000000',
           backgroundColor: '#ffffff',
           borderRadius: 40,
-          height: 60,
+          height: 80,
           ...styles.shadow,
         },
         headerStyle: {
@@ -118,12 +119,13 @@ const Tabs = () => {
       />
 
       <Tab.Screen
-        name="Chat"
-        component={ChatScreen}
+        name="List"
+        component={ListScreen}
         options={{
+          headerShown: false,
           headerLeft: null,
           headerRight: null,
-          tabBarLabel: 'Chat',
+          tabBarLabel: 'List',
           tabBarLabelStyle: {display: 'none'},
           tabBarIcon: ({focused}) => (
             <View
@@ -151,6 +153,7 @@ const Tabs = () => {
         name="Find"
         component={FindScreen}
         options={{
+          headerShown: false,
           headerLeft: null,
           headerRight: null,
           tabBarLabel: 'Find',
@@ -180,6 +183,7 @@ const Tabs = () => {
         name="Setting"
         component={SettingScreen}
         options={{
+          headerShown: false,
           tabBarStyle: { display: 'none' },
           tabBarLabel: 'Setting',
           tabBarLabelStyle: {display: 'none'},
@@ -203,13 +207,7 @@ const Tabs = () => {
             </View>
           ),
           headerRight: null,
-          headerLeft: () => (
-            <CustomButtonAlt
-              label="Custom Button"
-              icon={MenuIonicon}
-              onPress={() => {}}
-            />
-          ),
+          headerLeft: null,
         }}
       />
 
@@ -222,7 +220,6 @@ const Tabs = () => {
             <PostHeader
               label="Custom Button"
               icon={MenuIonicon}
-              onPress={() => {}}
             />
           ),
           headerRight: () => ( 

@@ -4,7 +4,8 @@ import {useNavigation} from '@react-navigation/native';
 
 
 
-function CustomFooterButton () {
+
+function AddListFooterButton () {
     const navigation = useNavigation();
     const handleNavigation = () => {
         navigation.navigate('LoginScreen')
@@ -15,26 +16,28 @@ function CustomFooterButton () {
         onPress={handleNavigation}
         style={styles.button}
         >
-            <Text style={styles.text}>Get started</Text>
+            <Text style={styles.text}>Add List</Text>
         </TouchableOpacity>
   
   );
 };
 
-export default CustomFooterButton;
+export default AddListFooterButton;
 
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#0085ff',
     marginHorizontal: 20,
     marginVertical: 40,
-    padding: 20,
+    padding: 15,
     borderRadius: 10,
+    marginTop: 90,
+    
   },
   text: {
-    color:'#000000',
+    color:'#ffffff',
     fontSize: 15,
     fontWeight: 700,
   }

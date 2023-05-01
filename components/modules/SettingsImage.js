@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginBottom: 10,
         marginTop: 0,
-        paddingTop: 0,
+        paddingTop: 20,
     },
     imgstyle:{
         width: 360,

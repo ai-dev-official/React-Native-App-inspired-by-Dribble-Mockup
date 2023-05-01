@@ -1,23 +1,38 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import AngleIcon from 'react-native-vector-icons/FontAwesome';
 import FavImage from '../assets/img1A.png';
+import {useNavigation} from '@react-navigation/native';
 
-const PostHeader = () => {
+function PostHeader() {
+  const navigation = useNavigation();
+  const handleNavigation = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <AngleIcon name="angle-left" size={30} color="#ffffff" style={styles.iconStyle} />
+        <TouchableOpacity
+        onPress = {handleNavigation}
+        style={styles.iconStyle}
+        >
+          <AngleIcon
+            name="angle-left"
+            size={30}
+            color="#ffffff"
+          />
+        </TouchableOpacity>
+
         <Image source={FavImage} style={[styles.icon, {}]} />
         <View style={styles.text}>
           <Text style={styles.textA}>Favorites</Text>
           <Text style={styles.textB}>128 chats</Text>
         </View>
       </View>
-     
     </View>
   );
-};
+}
 
 export default PostHeader;
 

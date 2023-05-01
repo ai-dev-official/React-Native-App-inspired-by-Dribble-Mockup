@@ -22,7 +22,7 @@ const SliderTab = () => {
 
   return (
     <View style={{ height: 40, marginHorizontal: 10,  }}>
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ width: windowWidth * TABS.length }}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ width: windowWidth + 50 }}>
 
         {TABS.map((tab, index) => (
           <TouchableOpacity

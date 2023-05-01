@@ -1,11 +1,20 @@
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import AddIcons from 'react-native-vector-icons/Octicons';
+import {useNavigation} from '@react-navigation/native';
 
-const FloatingAddIcon = () => {
+function FloatingAddIcon () {
+
+  const navigation = useNavigation();
+  const handleNavigation = () => {
+    navigation.navigate('SettingScreen');
+  };
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+      onPress={handleNavigation}
+      style={styles.button}
+      >
         <AddIcons name="plus" size={20} style={styles.icon} />
       </TouchableOpacity>
     </View>

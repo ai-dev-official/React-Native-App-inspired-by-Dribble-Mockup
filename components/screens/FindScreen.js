@@ -1,11 +1,16 @@
-import {Alert, StyleSheet, Text, View, Button} from 'react-native';
+import {Alert, StyleSheet, Text, View, ScrollView, StatusBar} from 'react-native';
 import React from 'react';
+import FindTopSearchBar from '../modules/TopSearchBar';
+import FindListItem from '../modules/FindListItem';
 
-const FindScreen = () => {
+const ListScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Find Screen</Text>
-      <Button title="Click" onPress={() =>  Alert.alert('Button Clicked!')} />
+      <StatusBar backgroundColor="#151718" barStyle="light-content" />
+      <ScrollView horizontal={false} showsHorizontalScrollIndicator={false}>
+      <FindTopSearchBar />
+      <FindListItem />
+      </ScrollView>
     </View>
   );
 };
@@ -13,10 +18,8 @@ const FindScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#1d1f20',
+    backgroundColor: '#151718',
   },
 });
 
-export default FindScreen;
+export default ListScreen;

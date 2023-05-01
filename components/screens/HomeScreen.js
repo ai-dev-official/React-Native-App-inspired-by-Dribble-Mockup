@@ -1,4 +1,4 @@
-import {Alert, StyleSheet, Text, View, Button, ScrollView} from 'react-native';
+import {Alert, StyleSheet, Text, View, Button, ScrollView, StatusBar} from 'react-native';
 import React from 'react';
 import HomeBanner from '../modules/HomeBanner';
 import SliderTab from '../modules/SliderMenu';
@@ -9,6 +9,7 @@ import TodoList from '../modules/TodoList';
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#1d1f20" barStyle="light-content" />
       <ScrollView horizontal={false} showsHorizontalScrollIndicator={false}>
       <View style={styles.homeBannerContainer}>
         <HomeBanner />
